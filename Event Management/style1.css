@@ -1,0 +1,51 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    width: 400%; /* 4 images = 400% */
+    animation: slide-animation 12s infinite;
+}
+
+.slide {
+    width: 100%; /* Each slide takes full width */
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide-animation {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
